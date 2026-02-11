@@ -12,26 +12,48 @@
 <body>
   <div id="hearts-container"></div>
 
-  <div class="fecha-container">
-    <label for="fecha" style="display:block; margin-bottom:10px;">
-        Elige el día que te venga bien:
-    </label>
+  <div class="container">
+    <img src="img/CorazonWin.png" alt="Corazón" class="valentine-img">
 
-    <input type="date" id="fecha">
+    <h1>
+      Entonces… ¿tenemos cita?
+      <i class="fa-solid fa-heart heart-icon" aria-hidden="true"></i>
+    </h1>
 
-    <br><br>
-
-    <button type="button" id="btn-whatsapp"
-            onclick="enviarWhatsApp()"
-            class="btn btn-success"
-            disabled>
-        Confirmar cita
-    </button>
-
-    <p id="hint-fecha" style="margin-top: 12px; font-size: 0.95em; color:#666;">
-        (Selecciona una fecha para activar el botón)
+    <p>
+      La verdad me hacía ilusión preguntártelo.<br><br>
+      Me encanta el rato que pasamos cuando volvemos juntos…<br>
+      así que pensé: ¿por qué no hacerlo oficial una vez más? 😌<br><br>
+      Dime qué día te viene bien y armamos un plan tranqui:<br>
+      algo de comer, caminar un poco y seguir riéndonos como siempre.
     </p>
-</div>
+
+    <p style="margin-top: 15px;">
+      Entonces dime cuándo… y lo hacemos oficial.
+    </p>
+
+    <div class="fecha-container">
+      <label for="fecha" style="display:block; margin-bottom:10px;">
+        Elige el día que te venga bien:
+      </label>
+
+      <input type="date" id="fecha">
+
+      <br><br>
+
+      <button type="button" id="btn-whatsapp"
+              onclick="enviarWhatsApp()"
+              class="btn btn-success"
+              disabled
+              style="opacity:0.6; cursor:not-allowed;">
+        Confirmar cita
+        <i class="fa-brands fa-whatsapp" style="margin-left:8px;" aria-hidden="true"></i>
+      </button>
+
+      <p id="hint-fecha" style="margin-top: 12px; font-size: 0.95em; color:#666; margin-bottom:0;">
+        (Selecciona una fecha para activar el botón)
+      </p>
+    </div>
 
     <div style="font-size: 2.2em; margin-top: 18px; opacity: 0.95;">
       <i class="fa-solid fa-heart"></i>
@@ -45,17 +67,15 @@
     const btnWA = document.getElementById("btn-whatsapp");
     const hint = document.getElementById("hint-fecha");
 
-    // 1) Bloquear fechas pasadas: min = hoy (en formato YYYY-MM-DD)
+    // Bloquear fechas pasadas: min = hoy (YYYY-MM-DD)
     const hoy = new Date();
     const yyyy = hoy.getFullYear();
     const mm = String(hoy.getMonth() + 1).padStart(2, "0");
     const dd = String(hoy.getDate()).padStart(2, "0");
     inputFecha.min = `${yyyy}-${mm}-${dd}`;
 
-    // 2) Activar botón solo cuando haya fecha válida
     function actualizarBoton() {
       const fecha = inputFecha.value;
-
       if (fecha) {
         btnWA.disabled = false;
         btnWA.style.opacity = "1";
@@ -76,7 +96,6 @@
       const fecha = inputFecha.value;
       if (!fecha) return;
 
-      // Formato DD/MM/YYYY
       const [y, m, d] = fecha.split("-");
       const fechaBonita = `${d}/${m}/${y}`;
 
@@ -84,11 +103,10 @@
 `Entonces queda oficial 😌
 ¿Te va bien el ${fechaBonita} para nuestra cita?`;
 
-      const numero = "34658110273";
+      const numero = "3400000000"; // pon el real luego (sin +, sin espacios)
       const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
       window.open(url, "_blank");
     }
   </script>
 </body>
 </html>
-
