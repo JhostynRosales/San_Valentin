@@ -51,14 +51,13 @@ body {
 }
 
 .valentine-gif {
-    width: 220px;
-    max-width: 100%;   /* ✅ clave */
+    width: 100%;
+    max-width: 300px;
     height: auto;
-    display: block;    /* ✅ evita comportamientos raros inline */
-    margin: 0 auto 30px;
-    object-fit: contain;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin: 0 auto 30px;
+    display: block;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     animation: float 3s ease-in-out infinite;
 }
     
@@ -207,6 +206,7 @@ p {
     opacity: 0.05;
   }
 }
+
 
 
 
