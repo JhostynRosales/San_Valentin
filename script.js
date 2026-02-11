@@ -47,9 +47,10 @@ document.addEventListener('DOMContentLoaded', function() {
 ];
 
             if (noClickCount <= texts.length) {
-                noBtn.textContent = texts[noClickCount - 1] || '¡DI QUE SÍ! 💖';
-            } else {
-                noBtn.textContent = '¡DI QUE SÍ! 💖';
+  noBtn.textContent = texts[noClickCount - 1];
+} else {
+  const i = (noClickCount - texts.length - 1) % fallbackTexts.length;
+  noBtn.textContent = fallbackTexts[i];
             }
 
             // Make the "No" button smaller
@@ -107,4 +108,5 @@ document.addEventListener('DOMContentLoaded', function() {
         setInterval(createHeart, 250);
     }
 });
+
 
