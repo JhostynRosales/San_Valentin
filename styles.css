@@ -24,6 +24,10 @@ body {
     width: 100%;
     animation: fadeIn 0.8s ease-in;
 }
+.container:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease;
+}
 
 @keyframes fadeIn {
     from {
@@ -43,6 +47,13 @@ body {
     border-radius: 20px;
     margin-bottom: 30px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: float 3s ease-in-out infinite;
+}
+    
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
 h1 {
@@ -151,4 +162,5 @@ p {
         font-size: 1em;
     }
 }
+
 
