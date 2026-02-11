@@ -161,12 +161,17 @@ p {
     h1 {
         font-size: 2em;
     }
-    
-    .valentine-img,
-    .valentine-gif{
+
+    .valentine-img{
         width: 150px;
         height: 150px;
     }
+
+    .valentine-gif{
+        width: 150px;
+        height: auto;  /* 👈 mantener proporción */
+    }
+
     
     .btn {
         padding: 12px 30px;
@@ -200,6 +205,7 @@ p {
     opacity: 0.05;
   }
 }
+
 
 
 
