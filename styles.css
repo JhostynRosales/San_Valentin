@@ -162,7 +162,8 @@ p {
         font-size: 2em;
     }
     
-    .valentine-img {
+    .valentine-img,
+    .valentine-gif{
         width: 150px;
         height: 150px;
     }
@@ -199,6 +200,7 @@ p {
     opacity: 0.05;
   }
 }
+
 
 
 
