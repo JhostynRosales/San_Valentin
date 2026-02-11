@@ -12,6 +12,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
+    flex-direction: column;
 }
 
 .container {
@@ -211,6 +212,27 @@ p {
     opacity: 0.05;
   }
 }
+
+
+/* Contenedor de fecha */
+.fecha-container {
+    margin-top: 25px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Input bonito y centrado */
+.fecha-container input {
+    width: 100%;
+    max-width: 250px;
+}
+
+/* Botón centrado */
+.fecha-container .btn {
+    width: 100%;
+    max-width: 250px;
+}
+
 
 
 
