@@ -14,24 +14,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const noBtn = document.getElementById('no-btn');
     const siBtn = document.getElementById('si-btn');
     const heartImg = document.getElementById('heart-img');
-    
+
     if (noBtn && siBtn) {
         noBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            
+
             // Increment click counter
             noClickCount++;
-            
+
             // Cycle through heart images
             if (heartImg && currentHeartIndex < heartImages.length - 1) {
                 currentHeartIndex++;
                 heartImg.src = heartImages[currentHeartIndex];
             }
-            
+
             // Increase the size of the "Sí" button
             siBtnSize += 0.3;
             siBtn.style.transform = `scale(${siBtnSize})`;
-            
+
             // Change button text based on clicks
             const texts = [
                 '¿Estás segura? 🤔',
@@ -45,17 +45,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 '¡Sí es la única opción! ❤️',
                 '¡Eso es un gancho al corazon! 💖'
             ];
-            
+
             if (noClickCount <= texts.length) {
                 noBtn.textContent = texts[noClickCount - 1] || '¡DI QUE SÍ! 💖';
             } else {
                 noBtn.textContent = '¡DI QUE SÍ! 💖';
             }
-            
+
             // Make the "No" button smaller
             const noBtnScale = Math.max(0.5, 1 - (noClickCount * 0.1));
             noBtn.style.transform = `scale(${noBtnScale})`;
-            
+
             // Add shake animation to "Sí" button
             siBtn.style.animation = 'none';
             setTimeout(() => {
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 10);
         });
     }
-    
+
     // Handle "Sí" button click to show winning heart
     if (siBtn) {
         siBtn.addEventListener('click', function(e) {
@@ -72,10 +72,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
     // --- Lluvia de corazones ---
     const heartsContainer = document.getElementById("hearts-container");
 
-    // Si existe el contenedor, activamos la lluvia
     if (heartsContainer) {
         const hearts = ["💖","💘","💝","💗","💓","💕"];
 
@@ -89,10 +89,10 @@ document.addEventListener('DOMContentLoaded', function() {
             heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
 
             const startX = rand(0, window.innerWidth);
-            const size = rand(14, 34);            // tamaño
-            const duration = rand(6, 14);         // velocidad de caída
-            const drift = rand(-120, 120) + "px"; // se mueve a los lados
-            const rot = rand(-360, 360) + "deg";  // rotación
+            const size = rand(14, 34);
+            const duration = rand(6, 14);
+            const drift = rand(-120, 120) + "px";
+            const rot = rand(-360, 360) + "deg";
 
             heart.style.left = startX + "px";
             heart.style.fontSize = size + "px";
@@ -104,7 +104,6 @@ document.addEventListener('DOMContentLoaded', function() {
             heart.addEventListener("animationend", () => heart.remove());
         }
 
-        setInterval(createHeart, 250); // menos = más corazones, más = menos
+        setInterval(createHeart, 250);
     }
 });
-
