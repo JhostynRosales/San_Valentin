@@ -199,6 +199,11 @@ p {
   filter: drop-shadow(0 6px 10px rgba(0,0,0,0.15));
   user-select: none;
 }
+.heart-icon{
+  color: #eb3349;
+  margin-left: 10px;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
 
 @keyframes fall{
   to{
@@ -206,6 +211,7 @@ p {
     opacity: 0.05;
   }
 }
+
 
 
 
