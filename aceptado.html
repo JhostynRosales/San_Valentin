@@ -3,26 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¡Somos San Valentín!</title>
+    <title>Tenemos cita</title>
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <img src="img/CorazonWin.png" alt="Celebración" class="valentine-img">
-             <h1>Entonces… ¿tenemos cita? 😏 <span class="heart">🎉</span></h1>
+    <div id="hearts-container"></div>
 
-<p>
-La verdad me hacía ilusión preguntártelo.<br><br>
-Me encanta el rato que pasamos cuando volvemos juntos…  
-así que pensé que estaría bien hacerlo oficialmente una vez más 😌<br><br>
-Dime qué día te viene bien y armamos un plan tranqui:  
-algo de comer, caminar un poco y seguir riéndonos como siempre 💖
-</p>
-        
-        <div class="heart" style="font-size: 3em; margin-top: 20px;">
-            💝 ❤️ 💕 💖 💗 💘 💝
+    <div class="container">
+        <img src="img/CorazonWin.png" alt="Corazón" class="valentine-img">
+
+        <h1>
+            Entonces… ¿tenemos cita?
+            <i class="fa-solid fa-heart heart-icon" aria-hidden="true"></i>
+        </h1>
+
+        <p>
+            La verdad me hacía ilusión preguntártelo.<br><br>
+            Me encanta el rato que pasamos cuando volvemos juntos…<br>
+            así que pensé: ¿por qué no hacerlo oficial una vez más? 😌<br><br>
+            Dime qué día te viene bien y armamos un plan tranqui:<br>
+            algo de comer, caminar un poco y seguir riéndonos como siempre.
+        </p>
+
+        <p style="margin-top: 10px;">
+            <p style="margin-top: 15px;">
+    Entonces dime cuándo… y lo hacemos oficial.
+            </p>
+            <i class="fa-solid fa-ice-cream" style="margin-left:8px;" aria-hidden="true"></i>
+        </p>
+
+        <div style="font-size: 2.2em; margin-top: 18px; opacity: 0.95;">
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-heart"></i>
         </div>
     </div>
+    <div style="margin-top: 25px;">
+    <label for="fecha" style="display:block; margin-bottom:10px;">
+        Elige el día que te venga bien:
+    </label>
+
+    <input type="date" id="fecha" 
+           style="padding:10px; border-radius:10px; border:1px solid #ccc;">
+
+    <br><br>
+
+    <button onclick="enviarWhatsApp()" class="btn btn-success">
+        Confirmar cita
+    </button>
+    </div>
+    <script>
+function enviarWhatsApp() {
+    const fecha = document.getElementById("fecha").value;
+
+    if (!fecha) {
+        alert("Primero elige una fecha 😊");
+        return;
+    }
+
+    const mensaje = `Entonces queda oficial 😌 
+Nuestra cita será el ${fecha}.
+Prometo que será un plan bonito.`;
+
+    const numero = "34658110273";
+
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+
+    window.open(url, "_blank");
+}
+    </script>
 </body>
 </html>
-
