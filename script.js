@@ -32,19 +32,19 @@ document.addEventListener('DOMContentLoaded', function() {
             siBtnSize += 0.3;
             siBtn.style.transform = `scale(${siBtnSize})`;
 
-            // Change button text based on clicks
+            // Change button text based on 
             const texts = [
-                '¿Estás segura? 🤔',
-                'Piénsalo bien... 😢',
-                'Por favor... 🥺',
-                'No me hagas esto 😭',
-                '¡Última oportunidad! 💔',
-                '¡Dale que sí! 🥰',
-                '¡Por favor di que sí! 💝',
-                '¡Te lo ruego! 💕',
-                '¡Sí es la única opción! ❤️',
-                '¡Eso es un gancho al corazon! 💖'
-            ];
+    '¿Segura segura? 😅',
+    'Mmm… revisa bien tu respuesta 🤔',
+    'Creo que ese botón está fallando 👀',
+    'Ups, creo que era el otro 😌',
+    'Te doy otra oportunidad 😏',
+    'Sin presión… pero piénsalo 💕',
+    'Prometo invitar el helado 🍦',
+    'Ok ok… pero el "Sí" se ve mejor 💖',
+    'Ese botón está sospechoso 🤨',
+    'Yo confiaría más en el otro 😇'
+];
 
             if (noClickCount <= texts.length) {
                 noBtn.textContent = texts[noClickCount - 1] || '¡DI QUE SÍ! 💖';
@@ -107,3 +107,4 @@ document.addEventListener('DOMContentLoaded', function() {
         setInterval(createHeart, 250);
     }
 });
+
