@@ -72,4 +72,39 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    // --- Lluvia de corazones ---
+    const heartsContainer = document.getElementById("hearts-container");
+
+    // Si existe el contenedor, activamos la lluvia
+    if (heartsContainer) {
+        const hearts = ["💖","💘","💝","💗","💓","💕"];
+
+        function rand(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.className = "heart-particle";
+            heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+
+            const startX = rand(0, window.innerWidth);
+            const size = rand(14, 34);            // tamaño
+            const duration = rand(6, 14);         // velocidad de caída
+            const drift = rand(-120, 120) + "px"; // se mueve a los lados
+            const rot = rand(-360, 360) + "deg";  // rotación
+
+            heart.style.left = startX + "px";
+            heart.style.fontSize = size + "px";
+            heart.style.animationDuration = duration + "s";
+            heart.style.setProperty("--drift", drift);
+            heart.style.setProperty("--rot", rot);
+
+            heartsContainer.appendChild(heart);
+            heart.addEventListener("animationend", () => heart.remove());
+        }
+
+        setInterval(createHeart, 250); // menos = más corazones, más = menos
+    }
 });
+
