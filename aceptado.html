@@ -12,46 +12,26 @@
 <body>
   <div id="hearts-container"></div>
 
-  <div class="container">
-    <img src="img/CorazonWin.png" alt="Corazón" class="valentine-img">
-
-    <h1>
-      Entonces… ¿tenemos cita?
-      <i class="fa-solid fa-heart heart-icon" aria-hidden="true"></i>
-    </h1>
-
-    <p>
-      La verdad me hacía ilusión preguntártelo.<br><br>
-      Me encanta el rato que pasamos cuando volvemos juntos…<br>
-      así que pensé: ¿por qué no hacerlo oficial una vez más? 😌<br><br>
-      Dime qué día te viene bien y armamos un plan tranqui:<br>
-      algo de comer, caminar un poco y seguir riéndonos como siempre.
-    </p>
-
-    <p style="margin-top: 15px;">
-      Entonces dime cuándo… y lo hacemos oficial.
-    </p>
-
-    <div style="margin-top: 25px;">
-      <label for="fecha" style="display:block; margin-bottom:10px;">
+  <div class="fecha-container">
+    <label for="fecha" style="display:block; margin-bottom:10px;">
         Elige el día que te venga bien:
-      </label>
+    </label>
 
-      <input type="date" id="fecha"
-             style="padding:10px; border-radius:10px; border:1px solid #ccc;">
+    <input type="date" id="fecha">
 
-      <br><br>
+    <br><br>
 
-      <button type="button" id="btn-whatsapp" onclick="enviarWhatsApp()" class="btn btn-success" disabled
-              style="opacity:0.6; cursor:not-allowed;">
+    <button type="button" id="btn-whatsapp"
+            onclick="enviarWhatsApp()"
+            class="btn btn-success"
+            disabled>
         Confirmar cita
-        <i class="fa-brands fa-whatsapp" style="margin-left:8px;" aria-hidden="true"></i>
-      </button>
+    </button>
 
-      <p id="hint-fecha" style="margin-top: 12px; font-size: 0.95em; color:#666;">
+    <p id="hint-fecha" style="margin-top: 12px; font-size: 0.95em; color:#666;">
         (Selecciona una fecha para activar el botón)
-      </p>
-    </div>
+    </p>
+</div>
 
     <div style="font-size: 2.2em; margin-top: 18px; opacity: 0.95;">
       <i class="fa-solid fa-heart"></i>
@@ -111,3 +91,4 @@
   </script>
 </body>
 </html>
+
